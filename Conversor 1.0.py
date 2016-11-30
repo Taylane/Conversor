@@ -49,7 +49,8 @@ class Aplicacao:
         self.radianosEntry2 = Entry(self.containerDireito, width = 10, bg=corEntry)
         self.radianosEntry2.grid(row=3, column=0)
 
-        #Config Converter Button
+#Config Converter Button
+
         self.converterButtom = Button(self.containerCentro, text="Converter", font=self.fonte,\
         command=self.converteFunc, bg=corEntry, fg=corLetra)
         self.converterButtom.focus_force()
@@ -107,16 +108,15 @@ class Aplicacao:
             if self.radianosEntry2.get()=="":
                 rad2=1
             else:
-                rad2 = self.radianosEntry2.get()
-            
+                rad2 = self.radianosEntry2.get()  
             try:
                 int(rad) and int(rad2)
-
             except:
                 self.resultLabel1["text"] = "Erro!"
                 self.resultLabel2["text"] = ""
                 return
             result=0
+            
             if(int(rad)==0 or int(rad2)==0):
                 self.resultLabel1["text"] = 0
                 self.resultLabel2["text"] = ""
@@ -133,8 +133,6 @@ class Aplicacao:
             self.resultLabel1["text"]="Erro!"
             self.resultLabel1["font"]=self.fonte
             self.resultLabel2["text"]=""
-
-
 
 root = Tk()
 Aplicacao(root)
